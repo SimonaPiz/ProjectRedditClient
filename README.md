@@ -7,8 +7,7 @@ For this project, you will build an application for Reddit using everything youâ
 
 ### Example Project
 [Reddit client example](https://reddit-client.netlify.app/)
-![Reddit client example](![image](https://user-images.githubusercontent.com/91121660/168833969-ccc7a91d-1933-4117-9890-e2bebf904886.png)
-)
+![Reddit client example](https://user-images.githubusercontent.com/91121660/168837208-a7d87d9b-2808-4489-a0b8-63edd66487da.png)
 
 ## Project Requirements:
 - Build the application using React and Redux
