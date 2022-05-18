@@ -76,3 +76,18 @@ For this project, we will be using the [Reddit JSON API](https://github.com/redd
 Note that Reddit has 2 APIs: the [official API](https://www.reddit.com/dev/api/) and an [undocumented JSON API](https://github.com/reddit-archive/reddit/wiki/JSON). You are welcome to use either APIs but we recommend using the JSON API because it doesn’t require an OAuth workflow. Using the JSON API does have limitations such as no write operations. For the purposes of this project, we find the JSON API adequate.
 
 The Reddit API will return some user content (comments) in Markdown. You should find a way to display the Markdown in your application.
+
+## First Wireframe
+> on paper
+![image first wireframe](https://user-images.githubusercontent.com/91121660/169057310-4dd69674-ac54-44b6-97ba-65814b453cb7.jpg)
+
+## Wireframe low-fidelity
+> with Figma
+### Desktop Homepage
+![Desktop Homepage - Wireframe - low fidelity](https://user-images.githubusercontent.com/91121660/169057928-1e087d8a-baf8-43f8-acd0-5c82fef02101.png)
+
+### desktop Detail Post page
+![Desktop Post detail page - Wireframe - low fidelity](https://user-images.githubusercontent.com/91121660/169058023-132afa56-2f18-4d10-8c4b-2426c8154df8.png)
+
+
+
