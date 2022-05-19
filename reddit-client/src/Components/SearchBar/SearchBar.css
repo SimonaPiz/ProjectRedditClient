@@ -22,7 +22,7 @@
 #searchContent input {
   height: 100%;
   background-color: transparent;
-  flex-grow: 7; 
+  flex-grow: 5; 
 }
 #searchContent input:focus {
   outline: none; 
@@ -30,7 +30,8 @@
 
 #searchContent div {
   height: 100%;
-  flex-grow: 1;
+  flex-grow: 0;
+  padding: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,10 +53,11 @@
   color: #fff;
   font-weight: 700;
 
-  flex-grow: 2;
+  flex-grow: 0;
+  flex-basis: 80px;
 
 }
 
 .searchButton:hover {
-  background-color: rgba(108, 65, 233, .7);
+  background-color: #6c41e9b3;
 }
