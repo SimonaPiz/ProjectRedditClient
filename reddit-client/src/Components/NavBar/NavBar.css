@@ -3,16 +3,16 @@
   height: 50px;
   background-color: white;
   padding: 9px;
+  box-shadow: 2px 0 6px #888888;
+
+  vertical-align: baseline;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
 #linkHome {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-  color: inherit;
-  text-decoration: inherit;
   align-items: center;
   display: inline-flex;
   flex-direction: row;
