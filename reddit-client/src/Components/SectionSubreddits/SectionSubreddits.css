@@ -21,3 +21,8 @@
   stroke-linecap: round;
   stroke-width: 0.5px;
 }
+
+.subreddits .iconSubreddit {
+  width: 32px;
+  height: 32px;
+}

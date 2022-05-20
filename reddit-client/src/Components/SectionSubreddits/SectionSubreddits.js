@@ -1,3 +1,4 @@
+import Subreddit from '../Subreddit/Subreddit';
 import './SectionSubreddits.css';
 
 export default function SectionSubreddits() {
@@ -8,7 +9,9 @@ export default function SectionSubreddits() {
         <line x1="0" y1="5" x2="900" y2="5"/>
       </svg>
       <ul>
-        <li>first</li>
+        <li>
+          <Subreddit className="subreddit" />
+        </li>
       </ul>
     </section>
   );

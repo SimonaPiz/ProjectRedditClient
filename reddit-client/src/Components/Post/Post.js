@@ -1,13 +1,11 @@
+import Subreddit from '../Subreddit/Subreddit';
 import './Post.css';
 
 export default function Post() {
   return(
     <div className='post'>
       <div className='postDetail'>
-        <div className='subreddit'>
-          <div className='iconSubreddit'></div>
-          <p>r/redditcommunity</p>
-        </div>
+        <Subreddit/>
         <p>Month 10, 2021</p>
       </div>
       <div className='postContent'>
