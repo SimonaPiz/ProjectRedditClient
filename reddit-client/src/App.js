@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import SectionPosts from './Components/SectionPosts/SectionPosts';
-import SectionSubreddits from './Components/Subreddit/SectionSubreddits';
+import SectionSubreddits from './Components/SectionSubreddits/SectionSubreddits';
 
 function App() {
   return (
