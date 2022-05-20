@@ -1,4 +1,4 @@
-import Subreddit from '../Subreddit/Subreddit';
+import Subreddit from '../../Components/Subreddit/Subreddit';
 import './SectionSubreddits.css';
 
 export default function SectionSubreddits() {

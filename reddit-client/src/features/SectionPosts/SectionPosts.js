@@ -1,5 +1,5 @@
 import './SectionPosts.css';
-import Post from '../Post/Post';
+import Post from '../../Components/Post/Post';
 
 export default function SectionPosts() {
   return (

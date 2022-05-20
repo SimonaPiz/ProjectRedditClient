@@ -11,13 +11,13 @@ export default function Post() {
       <div className='postContent'>
         <h3>Post Title - I saw something amazing on this trip</h3>
         <div className='postMedia'>
-          <img src='./ex-mediaPost.jpg'/>
+          <img src='./ex-mediaPost.jpg' alt=""/>
         </div>
       </div>
       <div className='postDetail'>
         <div className='comments'>
           <div className='iconComment'>
-            <img src='./iconComment.svg' />
+            <img src='./iconComment.svg' alt="" />
           </div>
           <p>4.5k comments</p>
         </div>
