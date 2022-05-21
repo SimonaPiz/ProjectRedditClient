@@ -1,4 +1,5 @@
 import './App.css';
+//importare i componenti
 import NavBar from '../NavBar/NavBar';
 import SectionPosts from '../../features/SectionPosts/SectionPosts';
 import SectionSubreddits from '../../features/SectionSubreddits/SectionSubreddits';

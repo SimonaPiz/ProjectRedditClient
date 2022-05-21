@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+//importare Provider per poter gestire lo store più facilmente
+import { Provider } from 'react-redux';
 import './index.css';
+
 import App from './Components/App/App';
+//importare lo store per gestire lo stato
+import store  from './Components/App/store';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    //passare lo store a provider
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
