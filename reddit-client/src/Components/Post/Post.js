@@ -1,4 +1,4 @@
-import Subreddit from '../Subreddit/Subreddit';
+import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
 
 export default function Post() {

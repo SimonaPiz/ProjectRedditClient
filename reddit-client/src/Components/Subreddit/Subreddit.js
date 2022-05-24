@@ -1,10 +1,12 @@
 import './Subreddit.css';
+import React from 'react';
 
-export default function Subreddit () {
+export function Subreddit ({subreddit}) {
+  //console.log(subreddit);
   return (
     <div className='subreddit'>
       <div className='iconSubreddit'></div>
-      <p>r/redditcommunity</p>
+      <p>r/{subreddit !== undefined ? subreddit.title : 'non trovato'}</p>
     </div>
   );
 }

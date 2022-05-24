@@ -1,27 +1,22 @@
-const initialState = "";
+import {createSlice} from '@reduxjs/toolkit';
 
-export const searchBarReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'searchBar/setSearchBar':
+const options = {
+  name: 'searchBar',
+  initialState: '',
+  reducers: {
+    setSearchBar: (state, action) => {
       return action.payload;
-    case 'searchBar/clearSearchBar':
+    },
+    clearSearchBar: (state, action) => {
       return '';
-    default:
-      return state;
+    }
   }
-}
+};
 
-export function setSearchBar(term) {
-  return {
-    type: 'searchBar/setSearchBar',
-    payload: term
-  }
-}
+export const searchBarSlice = createSlice(options);
 
-export function clearSearchBar() {
-  return {
-    type: 'searchBar/clearSearchBar'
-  }
-}
+export const {setSearchBar, clearSearchBar} = searchBarSlice.actions;
 
 export const selectSearchBar = (state) => state.searchBar;
+
+export default searchBarSlice.reducer;
