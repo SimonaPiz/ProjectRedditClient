@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {Subreddit} from '../../Components/Subreddit/Subreddit';
 import './SectionSubreddits.css';
-import { loadSubreddits, selectSubreddits } from './SectionSubredditsSlice';
+import { fetchSubreddits } from './SectionSubredditsSlice';
 
 export default function SectionSubreddits() {
-  const subreddits = useSelector((state) => state.sectionSubreddits);
+  const subreddits = useSelector((state) => state.sectionSubreddits.subreddits);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadSubreddits());
+    dispatch(fetchSubreddits());
   }, [dispatch]);
   //console.log(subreddits);
 
@@ -21,12 +21,12 @@ export default function SectionSubreddits() {
         <line x1="0" y1="5" x2="900" y2="5"/>
       </svg>
       <ul>
-        {subreddits.length > 0 ? subreddits.map((subreddit, index) => {
+        {subreddits.length > 0 ? subreddits.map((subreddit) => {
           return (
           <li>
             <Subreddit 
               subreddit={subreddit} 
-              key={index}
+              key={subreddit.id}
               className="subreddit" 
             />
           </li>

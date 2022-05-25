@@ -25,4 +25,6 @@
 .subreddits .iconSubreddit {
   width: 32px;
   height: 32px;
+  font-size: 31px;
+  line-height: 32px;
 }

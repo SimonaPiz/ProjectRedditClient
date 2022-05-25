@@ -3,10 +3,26 @@ import React from 'react';
 
 export function Subreddit ({subreddit}) {
   //console.log(subreddit);
+  if (!subreddit) {
+    return (
+      <div className='subreddit'>
+        <div className='iconSubreddit'>
+          <p>r/</p>
+        </div>
+        <p>r/example title</p>
+      </div>
+    );
+  }
+  const { name, icon, color } = subreddit;
   return (
     <div className='subreddit'>
-      <div className='iconSubreddit'></div>
-      <p>r/{subreddit !== undefined ? subreddit.title : 'non trovato'}</p>
+      <div className='iconSubreddit' style={{backgroundColor: color}}> 
+        {icon !== "" ?       
+          <img src={icon} alt=""/>
+        : <p>r/</p>
+        }
+      </div>
+      <p>r/{name || 'non trovato'}</p>
     </div>
   );
 }

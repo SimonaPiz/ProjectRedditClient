@@ -13,10 +13,6 @@ export default function SearchBar() {
     dispatch(setSearchBar(userInput));
   };
 
-  const onClearSearchTermHandler = () => {
-    dispatch(clearSearchBar());
-  };
-
   return (
     <div id='searchBar'>            
       <div id='searchContent'>
@@ -33,16 +29,7 @@ export default function SearchBar() {
           onChange={onSearchTermChangeHandler}
         />
         <button type="button" className='searchButton'>Search</button>
-
-        {searchTerm.length > 0 && (
-          <button className='searchButton'
-            onClick={onClearSearchTermHandler}
-            type="button"
-          > 
-            <img src='./clear.svg' alt="" />
-          </button>
-        )}
-        
+       
       </div>      
     </div>
   );
