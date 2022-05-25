@@ -2,7 +2,7 @@ const urlRoot = 'https://www.reddit.com';
 
 const Reddit = {
   getSubreddits: async () => {
-    const response = await fetch(`${urlRoot}/subreddits/popular.json`);
+    const response = await fetch(`${urlRoot}/subreddits/default.json`);
     const json = await response.json();
   
     return json.data.children.map(subreddit => {
