@@ -20,6 +20,32 @@ const Reddit = {
         over18: subreddit.data['over18'],
       };
     });
+  },
+
+  getSubredditPosts: async (subreddit) => {
+    const response = await fetch(`${urlRoot}${subreddit}.json`);
+    const json = await response.json();
+  
+    return json.data.children.map((post) => {
+      return {
+        subreddit: post.data.subreddit,
+        title: post.data.title,
+        name: post.data.name,
+        vote: post.data['upvote_ratio'],
+        ups: post.data.ups,
+        mediaSec: post.data['secure_media_embed'],
+        score: post.data.score,
+        created: post.data.created,
+        urlPost: post.data['url_overridden_by_dest'],
+        over18: post.data['over_18'],
+        subredditId: post.data['subreddit_id'],
+        id: post.data.id,
+        author: post.data.author,
+        numComments: post.data['num_comments'],
+        url: post.data.url,
+        media: post.data.media
+      };
+    });
   }
 
 };

@@ -35,9 +35,10 @@ h3 {
   width: 100%;
   margin-top: 15px;
 }
-.postMedia img {
+.postMedia img, .postMedia video {
   width: 100%;
 }
+
 
 .comments, .iconComment {
   display: flex;

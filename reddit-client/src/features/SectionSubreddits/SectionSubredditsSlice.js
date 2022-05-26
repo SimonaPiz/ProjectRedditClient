@@ -1,15 +1,6 @@
 import Reddit from '../../util/reddit';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-//creo uno stato temporaneo
-const subredditsData = [
-  {title: 'subreddit1'},
-  {title: 'subreddit2'},
-  {title: 'subreddit3'},
-  {title: 'subreddit4'},
-  {title: 'subreddit5'}
-];
-
 //Creo un'azione asincrona per recuperare i dati da Reddit api
 export const fetchSubreddits = createAsyncThunk(
   'sectionSubreddits/fetchSubreddits',
@@ -42,7 +33,7 @@ export const sectionSubredditsSlice = createSlice({
   },
 });
 
-export const {loadSubreddits} = sectionSubredditsSlice.actions;
+//export const {} = sectionSubredditsSlice.actions;
 
 //export const selectSubreddits = (state) => state.subreddits;
 
