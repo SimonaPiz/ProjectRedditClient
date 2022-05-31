@@ -8,6 +8,7 @@ import {  fetchPosts, fetchSubredditByName } from './sectionPostsSlice';
 export default function SectionPosts() {
   const posts = useSelector((state) => state.sectionPosts.posts);
   const subreddits = useSelector((state) => state.sectionPosts.subredditPosts);
+  const subIsLoad = useSelector((state) => state.sectionPosts.subIsLoad);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function SectionPosts() {
       let subName = posts[i].subreddit;
       dispatch(fetchSubredditByName(subName));
     };
-  }, []);
+  }, [posts]);
   
   if(posts === undefined) {
     return (
@@ -31,13 +32,11 @@ export default function SectionPosts() {
   };
 
   const findSub = (postSub) => {
-    if (subreddits.length > 0) {
       for (let i=0; i<posts.length; i++) {
-        if(subreddits[i].name == postSub){
+        if(subreddits[i] !== undefined && subreddits[i].name === postSub){
           return subreddits[i];
         };
       };
-    }
     return '';
   }
 
@@ -47,7 +46,9 @@ export default function SectionPosts() {
       {posts.length > 0 ? posts.map((post) => {
         return(
         <Post
-          subreddit={findSub(post.subreddit)}
+          subreddit={subIsLoad ? 
+            findSub(post.subreddit)
+            : ''}
           post={post}
           key={post.id}
           id={post.id}

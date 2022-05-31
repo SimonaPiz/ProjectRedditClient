@@ -23,7 +23,8 @@ export const sectionPostsSlice = createSlice({
   initialState: {
     posts: [],
     subredditPosts: [],
-    isLoading: false
+    isLoading: false,
+    subIsLoad: false,
   },
   reducers: {
   },
@@ -42,13 +43,16 @@ export const sectionPostsSlice = createSlice({
       })
 
       .addCase(fetchSubredditByName.pending, (state) => {
+        state.subIsLoad = false;
         state.isLoading = true;
       })
       .addCase(fetchSubredditByName.fulfilled, (state, action) => {
         state.isLoading = false;
         state.subredditPosts.push(action.payload);
+        state.subIsLoad = true;
       })
       .addCase(fetchSubredditByName.rejected, (state) => {
+        state.subIsLoad = false;
         state.isLoading= false;
       })
 
