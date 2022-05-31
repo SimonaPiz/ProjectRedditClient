@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 //importare i componenti
 import NavBar from '../NavBar/NavBar';
 import SectionPosts from '../../features/SectionPosts/SectionPosts';

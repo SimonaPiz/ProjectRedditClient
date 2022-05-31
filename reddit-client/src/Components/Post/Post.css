@@ -21,7 +21,6 @@
   padding: 20px 28px;
   display: flex;
   flex-flow: column wrap;
-  
 }
 
 h3 {
@@ -34,14 +33,18 @@ h3 {
 .postMedia {  
   width: 100%;
   margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: #cecece;
 }
-.postMedia img {
-  width: 100%;
+.postMedia img, .postMedia video {
+  max-width: 100%;
+  max-height: 400px;
 }
+
 
 .comments, .iconComment {
   display: flex;
-
 }
 
 .comments p {
