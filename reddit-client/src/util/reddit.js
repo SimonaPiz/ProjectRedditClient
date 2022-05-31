@@ -1,8 +1,8 @@
 const urlRoot = 'https://www.reddit.com';
 
 const Reddit = {
-  getSubreddits: async () => {
-    const response = await fetch(`${urlRoot}/subreddits/default.json`);
+  getSubreddits: async (type) => {
+    const response = await fetch(`${urlRoot}/subreddits/${type}.json`);
     const json = await response.json();
   
     return json.data.children.map(subreddit => {
@@ -22,13 +22,36 @@ const Reddit = {
     });
   },
 
+  getSubredditByName: async (subName) => {
+    const response = await fetch(`${urlRoot}/r/${subName}/about.json`);
+    if(response.ok){
+      const json = await response.json();
+      return {
+        name: json.data['display_name'],
+        nameId: json.data.name,
+        headerImg: json.data['header_img'],
+        headerTitle: json.data['header_title'],
+        title: json.data.title,
+        color: json.data['primary_color'],
+        icon: json.data['icon_img'],
+        subscribers: json.data.subscribers,
+        id: json.data.id,
+        description: json.data['public_description'],
+        created: json.data.created,
+        type: json.data['subreddit_type'],
+        over18: json.data['over18'],
+      };
+    };
+  },
+
   getSubredditPosts: async (subreddit) => {
     const response = await fetch(`${urlRoot}${subreddit}.json`);
     const json = await response.json();
-  
+        
     return json.data.children.map((post) => {
       return {
         subreddit: post.data.subreddit,
+        subredditObj: {},
         title: post.data.title,
         name: post.data.name,
         vote: post.data['upvote_ratio'],
@@ -46,26 +69,13 @@ const Reddit = {
         media: post.data.media
       };
     });
-  }
+  },
 
 };
 
 export default Reddit;
 
 /*
-export const getSubredditPosts = async (subreddit) => {
-  const response = await fetch(`${urlRoot}${subreddit}.json`);
-  const json = await response.json();
-
-  return json.data.children.map((post) => post.data);
-};
-
-export const getSubreddits = async () => {
-  const response = await fetch(`${urlRoot}/subreddits.json`);
-  const json = await response.json();
-
-  return json.data.children.map((subreddit) => subreddit.data);
-};
 
 export const getPostComments = async (permalink) => {
   const response = await fetch(`${urlRoot}${permalink}.json`);

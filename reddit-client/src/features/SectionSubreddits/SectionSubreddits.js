@@ -10,7 +10,7 @@ export default function SectionSubreddits() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchSubreddits());
+    dispatch(fetchSubreddits('default'));
   }, [dispatch]);
   //console.log(subreddits);
 

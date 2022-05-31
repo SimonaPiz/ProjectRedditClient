@@ -1,11 +1,12 @@
 import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
 
-export default function Post({post}) {
+export default function Post({post, subreddit}) {
   if(post === undefined) {
     return;
   }
 
+  //-------------per verificare il tipo di media del post
   const findMediaKey = () => {
     if(post.media !== null){
       return Object.keys(post.media);
@@ -18,7 +19,15 @@ export default function Post({post}) {
     return;
   } 
 
-  const {title, media, created, author, numComments, subreddit, url} = post;
+  //destrutturo le propietà del post che ci servono
+  const {
+    title, 
+    media, 
+    created, 
+    author, 
+    numComments, 
+    url
+  } = post;
   
   const getType = url => {
     if(media !== null) {
@@ -33,12 +42,11 @@ export default function Post({post}) {
     }
   };
   const type = getType(url);
-  //console.log(mediaKey, type);
-
+  
   return(
     <div className='post'>
       <div className='postDetail'>
-        <Subreddit subreddit={{name: subreddit, icon: ''}}/>
+        <Subreddit subreddit={subreddit}/>
         <p>{created}</p>
       </div>
       <div className='postContent'>

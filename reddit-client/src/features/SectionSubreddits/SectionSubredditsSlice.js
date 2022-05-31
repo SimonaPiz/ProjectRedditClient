@@ -4,8 +4,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 //Creo un'azione asincrona per recuperare i dati da Reddit api
 export const fetchSubreddits = createAsyncThunk(
   'sectionSubreddits/fetchSubreddits',
-  async () => {
-    const response = await Reddit.getSubreddits();
+  async (type) => {
+    const response = await Reddit.getSubreddits(type);
     return response;
   }
 );

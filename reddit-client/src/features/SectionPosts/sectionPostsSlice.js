@@ -10,13 +10,23 @@ export const fetchPosts = createAsyncThunk(
   }
 );
 
+export const fetchSubredditByName = createAsyncThunk(
+  'sectionPosts/fetchSubredditByName',
+  async (subName) => {
+    const response = await Reddit.getSubredditByName(subName);
+    return response;
+  }
+);
+
 export const sectionPostsSlice = createSlice({
   name: 'sectionPosts',
   initialState: {
     posts: [],
+    subredditPosts: [],
     isLoading: false
   },
-  reducers: {},
+  reducers: {
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPosts.pending, (state) => {
@@ -30,11 +40,24 @@ export const sectionPostsSlice = createSlice({
         state.isLoading= false;
         state.posts = [];
       })
+
+      .addCase(fetchSubredditByName.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchSubredditByName.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.subredditPosts.push(action.payload);
+      })
+      .addCase(fetchSubredditByName.rejected, (state) => {
+        state.isLoading= false;
+      })
+
   },
 });
 
-//export const {} = sectionPostsSlice.actions;
+export const { setSubredditPost } = sectionPostsSlice.actions;
 
-//export const selectPosts = (state) => state.posts;
+//export const selectPosts = (state) => state.sectionPosts.posts;
+//export const selectSubreddits = (state) => state.sectionPosts.subredditPosts;
 
 export default sectionPostsSlice.reducer;
