@@ -1,3 +1,10 @@
 div.App {
   width: 100%;  
 }
+
+main#homepage, main#postdetailpage {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
