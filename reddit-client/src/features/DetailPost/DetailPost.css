@@ -1,14 +1,11 @@
-.posts {
+.postDetail {
   margin: 25px;
-  
-
   flex-grow: 2;
   flex-basis: 65%;
 }
 
-.posts h2 {
+.postDetail h2 {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
 }
-

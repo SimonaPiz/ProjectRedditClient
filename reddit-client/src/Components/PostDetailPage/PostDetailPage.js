@@ -1,12 +1,13 @@
 import React from "react";
 
-import SectionSubreddits from "../../features/DetailSubreddit/DetailSubreddit";
+import DetailSubreddit from "../../features/DetailSubreddit/DetailSubreddit";
+import DetailPost from "../../features/DetailPost/DetailPost";
 
 export default function PostDetail () {
   return (
     <main id="postdetailpage">
-      <SectionSubreddits />
-      //PostDetail
+      <DetailSubreddit />
+      <DetailPost />     
     </main>
   );
 };
