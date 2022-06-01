@@ -43,9 +43,11 @@ export default function DetailPost() {
   return (
     <section className='postDetail'>
       <h2>Post details</h2>
+      <div id='sectionPostDetails'>
       //Post <br/>
         
       //sectionComments
+      </div>
     </section>
   );
 }

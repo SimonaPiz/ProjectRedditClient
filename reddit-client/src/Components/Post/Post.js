@@ -45,7 +45,7 @@ export default function Post({post, subreddit}) {
   
   return(
     <div className='post'>
-      <div className='postDetail'>
+      <div className='postDetails'>
         <Subreddit subreddit={subreddit}/>
         <p>{created}</p>
       </div>
@@ -67,7 +67,7 @@ export default function Post({post, subreddit}) {
           }
         </div>
       </div>
-      <div className='postDetail'>
+      <div className='postDetails'>
         <div className='comments'>
           <div className='iconComment'>
             <img src='./iconComment.svg' alt="" />

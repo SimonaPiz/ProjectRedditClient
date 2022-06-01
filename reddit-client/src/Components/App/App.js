@@ -12,15 +12,14 @@ function App() {
     <Router>
       <div className="App">
         <NavBar/>
-        <Switch>
-        
-        <Route path='/post-detail'>
-          <PostDetailPage />
-        </Route>
+        <Switch>        
+          <Route path='/post-detail'>
+            <PostDetailPage />
+          </Route>
 
-        <Route path='/'>
-          <HomePage />
-        </Route>
+          <Route path='/'>
+            <HomePage />
+          </Route>
         </Switch>
       </div>
     </Router>
