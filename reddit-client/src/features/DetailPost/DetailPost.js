@@ -6,6 +6,15 @@ import Post from '../../Components/Post/Post';
 //import {  fetchPosts, fetchSubredditByName } from './sectionPostsSlice';
 
 export default function DetailPost() {
+  const postStatic = {
+    title: 'Post Title - I saw something amazing on this trip', 
+    media: null, 
+    created: 1654072819, 
+    author: 'user', 
+    numComments: 657, 
+    url: './ex-mediaPost.jpg'
+  };
+
   /*const posts = useSelector((state) => state.sectionPosts.posts);
   const subreddits = useSelector((state) => state.sectionPosts.subredditPosts);
   const subIsLoad = useSelector((state) => state.sectionPosts.subIsLoad);
@@ -44,9 +53,12 @@ export default function DetailPost() {
     <section className='postDetail'>
       <h2>Post details</h2>
       <div id='sectionPostDetails'>
-      //Post <br/>
+        <Post 
+          className='postDiv'
+          post={postStatic}
+        />
         
-      //sectionComments
+        //sectionComments
       </div>
     </section>
   );
