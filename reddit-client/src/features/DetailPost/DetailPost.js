@@ -43,12 +43,8 @@ export default function DetailPost() {
   return (
     <section className='postDetail'>
       <h2>Post details</h2>
-      <Post
-        subreddit={''}
-        post={''}
-        key={''}
-        id={''}
-      />
+      //Post <br/>
+        
       //sectionComments
     </section>
   );
