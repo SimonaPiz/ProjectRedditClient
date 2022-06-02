@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './DetailPost.css';
 import Post from '../../Components/Post/Post';
+import Comments from '../Comments/Comments';
 //import {  fetchPosts, fetchSubredditByName } from './sectionPostsSlice';
 
 export default function DetailPost() {
@@ -56,9 +57,8 @@ export default function DetailPost() {
         <Post 
           className='postDiv'
           post={postStatic}
-        />
-        
-        //sectionComments
+        />        
+        <Comments />
       </div>
     </section>
   );
