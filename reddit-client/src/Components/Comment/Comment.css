@@ -4,7 +4,7 @@ div.userDiv {
   color: #878A8C;
   font-size: 14px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 div.userIcon {
@@ -31,7 +31,7 @@ div.userIcon {
 
 .commentFooter {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   color: #878A8C;
   font-size: 14px;
 }

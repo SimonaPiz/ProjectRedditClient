@@ -32,12 +32,14 @@ export default function SectionPosts() {
   };
 
   const findSub = (postSub) => {
+    let subResult = '';
       for (let i=0; i<posts.length; i++) {
         if(subreddits[i] !== undefined && subreddits[i].name === postSub){
-          return subreddits[i];
+          subResult = subreddits[i];
+          break;
         };
       };
-    return '';
+    return subResult;
   }
 
   return (
