@@ -1,0 +1,41 @@
+div.userDiv {
+  width: 100%;
+  padding: 9px 0;
+  color: #878A8C;
+  font-size: 14px;
+  display: flex;
+  justify-content: start;
+}
+
+div.userIcon {
+  margin-right: 9px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: #c784ff;
+  display: flex;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  justify-content: center;
+  align-content:center ;
+  align-items: center;
+}
+
+.commentContent {
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+.commentFooter {
+  display: flex;
+  justify-content: end;
+  color: #878A8C;
+  font-size: 14px;
+}
+
+div.verticalLine svg {
+  height: 100%;
+}
