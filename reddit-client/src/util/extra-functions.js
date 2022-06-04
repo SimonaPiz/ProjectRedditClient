@@ -5,3 +5,11 @@ export const convertDate = (date) => {
   return setDate;
 };
 
+//convert num of comments if is more than 1000
+export const convertToK = (num) => {
+  if (num < 1000) {
+    return num;
+  } else {
+    return (num/1000).toPrecision(2) + 'K';
+  };
+};

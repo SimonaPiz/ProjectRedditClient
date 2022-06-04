@@ -1,6 +1,6 @@
 import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
-import { convertDate } from '../../util/extra-functions';
+import { convertDate, convertToK } from '../../util/extra-functions';
 
 export default function Post({post, subreddit}) {
   if(post === undefined) {
@@ -73,7 +73,7 @@ export default function Post({post, subreddit}) {
           <div className='iconComment'>
             <img src='./iconComment.svg' alt="" />
           </div>
-          <p>{numComments} comments</p>
+          <p>{convertToK(numComments)} comments</p>
         </div>
         <p>u/{author}</p>
       </div>
