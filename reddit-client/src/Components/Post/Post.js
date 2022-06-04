@@ -1,5 +1,6 @@
 import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
+import { convertDate } from '../../util/extra-functions';
 
 export default function Post({post, subreddit}) {
   if(post === undefined) {
@@ -47,7 +48,7 @@ export default function Post({post, subreddit}) {
     <div className='post'>
       <div className='postDetails'>
         <Subreddit subreddit={subreddit}/>
-        <p>{created}</p>
+        <p>{convertDate(created)}</p>
       </div>
       <div className='postContent'>
         <h3>{title}</h3>
