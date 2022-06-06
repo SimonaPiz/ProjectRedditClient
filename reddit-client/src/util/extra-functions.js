@@ -9,7 +9,9 @@ export const convertDate = (date) => {
 export const convertToK = (num) => {
   if (num < 1000) {
     return num;
+  } else if (num > 1001 && num < 1000000) {
+    return (num/1000).toPrecision(2) + 'k';
   } else {
-    return (num/1000).toPrecision(2) + 'K';
+    return (num/1000000).toPrecision(3) + 'm';
   };
 };
