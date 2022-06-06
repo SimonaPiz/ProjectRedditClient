@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
 import { convertDate, convertToK } from '../../util/extra-functions';
@@ -50,7 +53,7 @@ export default function Post({post, subreddit}) {
         <Subreddit subreddit={subreddit}/>
         <p>{convertDate(created)}</p>
       </div>
-      <div className='postContent'>
+      <Link><div className='postContent'>
         <h3>{title}</h3>
         <div className='postMedia'>
           {media === null ? 
@@ -67,7 +70,7 @@ export default function Post({post, subreddit}) {
             </video> 
           }
         </div>
-      </div>
+      </div></Link>
       <div className='postDetails'>
         <div className='comments'>
           <div className='iconComment'>
