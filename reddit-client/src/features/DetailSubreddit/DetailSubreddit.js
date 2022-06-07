@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import {Subreddit} from '../../Components/Subreddit/Subreddit';
 import './DetailSubreddit.css';
 import { fetchSubredditByName } from './detailSubredditSlice';
-import { convertToK, convertDate, updateBackground } from '../../util/extra-functions';
+import { convertToK, convertDate } from '../../util/extra-functions';
 
 export default function DetailSubreddit() {
   const subObj = useSelector((state) => state.detailSubreddit.subreddit);
@@ -14,7 +14,7 @@ export default function DetailSubreddit() {
     
   useEffect(() => {
     dispatch(fetchSubredditByName(subreddit));
-  }, [subreddit]);
+  }, [subreddit, dispatch]);
   //console.log(subreddit); 
    
 
