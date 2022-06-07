@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
 import { convertDate, convertToK } from '../../util/extra-functions';
 
-export default function Post({post, subreddit}) {
+export default function Post({post, subreddit, linkSub}) {
   if(post === undefined) {
     return;
   }
@@ -50,9 +49,13 @@ export default function Post({post, subreddit}) {
   return(
     <div className='post'>
       <div className='postDetails'>
-        <a href={'r/'+ subreddit.name}>
+        {!linkSub ? 
           <Subreddit subreddit={subreddit}/>
-        </a>
+        :
+          <a href={'r/'+ subreddit.name}>
+            <Subreddit subreddit={subreddit}/>
+          </a>
+        }
         <p>{convertDate(created)}</p>
       </div>
       <a href={'/r/'+ subreddit.name + '/comments/' + post.id}><div className='postContent'>

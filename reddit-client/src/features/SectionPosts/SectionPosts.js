@@ -13,7 +13,11 @@ export default function SectionPosts() {
   const subObj = useSelector((state) => state.detailSubreddit.subreddit);
   const dispatch = useDispatch();
   let { subreddit } = useParams();
-  console.log(subreddit);
+  let linkActive = true;
+  //console.log(subreddit);
+  if(subreddit) {
+    linkActive = false;
+  }
   
   useEffect(() => {
     if(subreddit) {
@@ -64,6 +68,7 @@ export default function SectionPosts() {
           post={post}
           key={post.id}
           id={post.id}
+          linkSub={linkActive}
         />
       )}) : <p>Loading...</p>}
     </section>
