@@ -15,33 +15,20 @@ function App() {
       <div className="App">
         <NavBar/>
         <main>
-          {/*----Section left: Subreddits------*/}
+          {/*----page subreddit r/ ------*/}
           <Switch>
-            {/*when click on a post or a subreddit, load a single subreddit */}
-            <Route path='/r/:subreddit?'>
+            <Route path='/r/:subreddit'>
+              {/*when click on a post or a subreddit, load a single subreddit */}
               <DetailSubreddit />
-            </Route>
+              {/*when click on a subreddit, load specific posts */}
+              <SectionPosts />                 
+            </Route>          
 
-            {/*when app starts, loading a default list of subreddits */}
+            {/*-------- homepage ----------*/}
             <Route exact path='/'>
+              {/*when app starts, loading a default list of subreddits */}
               <SectionSubreddits/>
-            </Route>            
-          </Switch>
-
-          {/*----Section right: Posts------*/}
-          <Switch>
-            {/*when click on a post, load post details and its comments*/}
-            <Route path='/r/:subreddit/comments/:postId'>
-              <DetailPost />
-            </Route>
-
-            {/*when click on a subreddit, load specific posts */}
-            <Route path='/r/:subreddit?'>
-              <SectionPosts />       
-            </Route>
-
-            {/*when app starts loading popular posts */}
-            <Route exact path='/'>
+              {/*when app starts loading popular posts */}
               <SectionPosts />
             </Route>
           </Switch>      
