@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import {Subreddit} from '../../Components/Subreddit/Subreddit';
 import './SectionSubreddits.css';
@@ -25,13 +24,13 @@ export default function SectionSubreddits() {
         {subreddits.length > 0 ? subreddits.map((subreddit) => {
           return (
           <li>
-            <Link to={'r/'+ subreddit.name}>
+            <a href={'r/'+ subreddit.name}>
             <Subreddit 
               subreddit={subreddit} 
               key={subreddit.id}
               className="subreddit" 
             />
-            </Link>
+            </a>
           </li>
           )
         }) : <li>Loading...</li>}

@@ -50,12 +50,12 @@ export default function Post({post, subreddit}) {
   return(
     <div className='post'>
       <div className='postDetails'>
-        <Link to={'r/'+ subreddit.name}>
+        <a href={'r/'+ subreddit.name}>
           <Subreddit subreddit={subreddit}/>
-        </Link>
+        </a>
         <p>{convertDate(created)}</p>
       </div>
-      <Link to={'/r/'+ subreddit.name + '/comments/' + post.id}><div className='postContent'>
+      <a href={'/r/'+ subreddit.name + '/comments/' + post.id}><div className='postContent'>
         <h3>{title}</h3>
         <div className='postMedia'>
           {media === null ? 
@@ -72,7 +72,7 @@ export default function Post({post, subreddit}) {
             </video> 
           }
         </div>
-      </div></Link>
+      </div></a>
       <div className='postDetails'>
         <div className='comments'>
           <div className='iconComment'>
