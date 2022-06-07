@@ -1,7 +1,13 @@
 //convert date in milliseconds to string(for post or subreddit...)
-export const convertDate = (date) => {
+export const convertDate = (date, hour=true) => {
   const newDate = new Date(date * 1000);
-  const setDate = newDate.getHours() + ':' + newDate.getMinutes() + ' - ' + newDate.toLocaleDateString();
+  let setDate;
+  if (hour){
+    setDate = newDate.getHours() + ':' + newDate.getMinutes() + ' - ' + newDate.toLocaleDateString();
+  } else {
+    setDate = newDate.toLocaleDateString();
+  };
+  
   return setDate;
 };
 

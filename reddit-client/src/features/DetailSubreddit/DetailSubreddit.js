@@ -1,34 +1,44 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import {Subreddit} from '../../Components/Subreddit/Subreddit';
 import './DetailSubreddit.css';
-//import { fetchSubreddits } from './SectionSubredditsSlice';
+import { fetchSubredditByName } from './detailSubredditSlice';
+import { convertToK, convertDate, updateBackground } from '../../util/extra-functions';
 
 export default function DetailSubreddit() {
-  /*const subreddit = useSelector((state) => state);
+  const subObj = useSelector((state) => state.detailSubreddit.subreddit);
   const dispatch = useDispatch();
-
+  let {subreddit} = useParams();
+    
   useEffect(() => {
-    dispatch(fetchSubreddits('default'));
-  }, [dispatch]);*/
-  //console.log(subreddits);
+    dispatch(fetchSubredditByName(subreddit));
+  }, [subreddit]);
+  //console.log(subreddit); 
+   
 
   return (
-    <section className='subredditDetail'>
+    <section className='subredditDetail' >      
+      <div className='headerSub' style={{backgroundColor : subObj.color}}></div>
       <Subreddit 
-        subreddit=''
-        key=''
+        subreddit= {subObj}
+        key={subObj.id}
         className="subreddit" 
-      />
+      />        
       <div className='subDescription'>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p>{subObj.description}</p>
       </div>
-      <p className='subMembers'><span>Members: </span>1,4 m</p>
+      <p className='subMembers'><span>Members: </span>{convertToK(subObj.subscribers)}</p>
+      <div className='headerSub'>
+        {subObj.headerImg && (
+          <img src={subObj.headerImg} alt=''/>
+        )}
+      </div>
       <svg width="100%" height="10px">
         <line x1="0" y1="5" x2="900" y2="5"/>
       </svg>
-      <p className='subCreatedDate'>creato il 27 maggio 2019</p>      
+      <p className='subCreatedDate'>Created at: {convertDate(subObj.created, false)}</p>      
     </section>
   );
 }

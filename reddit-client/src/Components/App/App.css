@@ -2,7 +2,7 @@ div.App {
   width: 100%;  
 }
 
-main#homepage, main#postdetailpage {
+main {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;

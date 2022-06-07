@@ -50,10 +50,12 @@ export default function Post({post, subreddit}) {
   return(
     <div className='post'>
       <div className='postDetails'>
-        <Subreddit subreddit={subreddit}/>
+        <Link to={'r/'+ subreddit.name}>
+          <Subreddit subreddit={subreddit}/>
+        </Link>
         <p>{convertDate(created)}</p>
       </div>
-      <Link><div className='postContent'>
+      <Link to={'/r/'+ subreddit.name + '/comments/' + post.id}><div className='postContent'>
         <h3>{title}</h3>
         <div className='postMedia'>
           {media === null ? 
