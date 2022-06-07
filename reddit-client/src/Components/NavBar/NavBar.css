@@ -23,8 +23,10 @@
   color: #8c00ff;
 }
 
-img.logo {
+div.logo {
   width: 32px;
+  height: 32px;
+  background-image: url("../../../public/logo01.svg");
 }
 
 .reddit {
