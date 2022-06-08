@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams, useRouteMatch } from 'react-router-dom';
 
 import './DetailPost.css';
 import Post from '../../Components/Post/Post';
 import Comments from '../Comments/Comments';
-//import {  fetchPosts, fetchSubredditByName } from './sectionPostsSlice';
+import {  fetchPostById } from './detailPostSlice';
 
 export default function DetailPost() {
   const postStatic = {
@@ -16,47 +17,30 @@ export default function DetailPost() {
     url: './ex-mediaPost.jpg'
   };
 
-  /*const posts = useSelector((state) => state.sectionPosts.posts);
-  const subreddits = useSelector((state) => state.sectionPosts.subredditPosts);
-  const subIsLoad = useSelector((state) => state.sectionPosts.subIsLoad);
+  const subreddit = useSelector((state) => state.detailSubreddit.subreddit);
+  const post = useSelector((state) => state.detailPost.post);
+  const comments = useSelector((state) => state.detailPost.comments);
   const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(fetchPosts('/r/popular'));     
+  let {url} = useRouteMatch();
+  //console.log(postId);
+
+  useEffect(() => { 
+    dispatch(fetchPostById(url));
   }, [dispatch]);
 
-  useEffect(() => {
-    for(let i=0; i<posts.length; i++) {
-      let subName = posts[i].subreddit;
-      dispatch(fetchSubredditByName(subName));
-    };
-  }, [posts]);
-  
-  if(posts === undefined) {
-    return (
-      <section className='posts'>
-        <h2>Popular Posts</h2>
-        <p><br/>Loading posts...</p>
-      </section>
-    );
-  };
-
-  const findSub = (postSub) => {
-      for (let i=0; i<posts.length; i++) {
-        if(subreddits[i] !== undefined && subreddits[i].name === postSub){
-          return subreddits[i];
-        };
-      };
-    return '';
-  }*/
-
-  return (
+  return ( !post ? 
+    <p>post loading...</p>
+    :
     <section className='postDetail'>
       <h2>Post details</h2>
       <div id='sectionPostDetails'>
         <Post 
           className='postDiv'
-          post={postStatic}
+          subreddit={subreddit}
+          post={post}
+          key={post.id}
+          id={post.id}
+          linkSub={false}
         />        
         <Comments />
       </div>

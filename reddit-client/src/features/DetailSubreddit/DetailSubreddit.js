@@ -20,7 +20,7 @@ export default function DetailSubreddit() {
 
   return (
     <section className='subredditDetail' >      
-      <div className='headerSub' style={{backgroundColor : subObj.color}}></div>
+      {subObj.color && <div className='headerSub' style={{backgroundColor : subObj.color}}></div>}
       <Subreddit 
         subreddit= {subObj}
         key={subObj.id}

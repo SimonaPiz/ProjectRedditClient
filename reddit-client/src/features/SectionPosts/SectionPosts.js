@@ -12,8 +12,9 @@ export default function SectionPosts() {
   const subIsLoad = useSelector((state) => state.sectionPosts.subIsLoad);
   const subObj = useSelector((state) => state.detailSubreddit.subreddit);
   const dispatch = useDispatch();
-  let { subreddit } = useParams();
-  let linkActive = true;
+  
+  let { subreddit } = useParams();    //import param from url (if it is /:subreddit)
+  let linkActive = true;    //per attivare/disattivare il link alla subreddit
   //console.log(subreddit);
   if(subreddit) {
     linkActive = false;

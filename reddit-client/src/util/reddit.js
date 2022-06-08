@@ -71,6 +71,12 @@ const Reddit = {
     });
   },
 
+  getPostById: async(url) => {
+    const response = await fetch(`${urlRoot}${url}.json`);
+    const json = await response.json();    
+    return json;
+  },
+
 };
 
 export default Reddit;

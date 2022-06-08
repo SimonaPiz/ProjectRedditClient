@@ -67,15 +67,16 @@ export default function Post({post, subreddit, linkSub}) {
               :
               <a href={url}>see article -{'>'}</a>
             )            
-          : 
-            <video controls>
-              <source src={media['reddit_video']['fallback_url']} type='video/mp4'/>
-              <source src={media['reddit_video']['fallback_url']} type='video/webm'/>
-              <p>Video is not supported</p>
-            </video> 
-          }
+            : 
+              <video controls>
+                <source src={media['reddit_video']['fallback_url']} type='video/mp4'/>
+                <source src={media['reddit_video']['fallback_url']} type='video/webm'/>
+                <p>Video is not supported</p>
+              </video> 
+            }
+          </div>
         </div>
-      </div></a>
+      </a>
       <div className='postDetails'>
         <div className='comments'>
           <div className='iconComment'>

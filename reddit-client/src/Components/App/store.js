@@ -4,6 +4,7 @@ import sectionSubredditsReducer from '../../features/SectionSubreddits/SectionSu
 import searchBarReducer from '../../features/SearchBar/searchBarSlice';
 import sectionPostsReducer from '../../features/SectionPosts/sectionPostsSlice';
 import detailSubredditReducer from '../../features/DetailSubreddit/detailSubredditSlice'; 
+import detailPostReducer from '../../features/DetailPost/detailPostSlice';
 
 export const store = configureStore({
   reducer: {    //elenco reducer delle slice
@@ -11,5 +12,6 @@ export const store = configureStore({
     sectionSubreddits: sectionSubredditsReducer,
     sectionPosts: sectionPostsReducer,
     detailSubreddit: detailSubredditReducer,
+    detailPost: detailPostReducer,
   },
 });
