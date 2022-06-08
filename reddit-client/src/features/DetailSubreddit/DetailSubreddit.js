@@ -19,8 +19,10 @@ export default function DetailSubreddit() {
    
 
   return (
-    <section className='subredditDetail' >      
-      {subObj.color && <div className='headerSub' style={{backgroundColor : subObj.color}}></div>}
+    <section 
+      className='subredditDetail' 
+      style={subObj.color !== (""||''||undefined||null) && { background: `linear-gradient(135deg, ${subObj.color} 7%, 7%, white 93%, 93%, ${subObj.color} 100%)`}}
+    >      
       <Subreddit 
         subreddit= {subObj}
         key={subObj.id}
