@@ -2,6 +2,7 @@
   margin: 25px;
   flex-grow: 2;
   flex-basis: 65%;
+  max-width: 65%;
 }
 
 .postDetail h2 {

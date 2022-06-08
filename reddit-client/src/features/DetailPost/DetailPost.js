@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 
 import './DetailPost.css';
 import Post from '../../Components/Post/Post';
@@ -52,7 +52,10 @@ export default function DetailPost() {
           linkSub={false}
         />
       }        
-        <Comments />
+        <Comments 
+          id={post.id}
+          comments= {comments}
+        />
       </div>
     </section>
   );

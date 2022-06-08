@@ -1,11 +1,13 @@
 import './Comment.css';
 import React from 'react';
 
-export default function Comment() {
-  let hasChild = true;
+import { convertDate } from '../../util/extra-functions';
 
-  const childComment = (hasChild = false, child) => {
-    
+export default function Comment({comment}) {
+  let hasChild = false;
+
+  //function to load Comment child
+  const childComment = (hasChild = false, child) => {    
     return(
       <div>
         <div className="userDiv">
@@ -39,7 +41,7 @@ export default function Comment() {
         <div className="userIcon">
           <p>u/</p>
         </div>
-        <p>u/user name</p>
+        <p>{comment.author}</p>
       </div>
       <div className="commentContent">
         <div className="verticalLine">
@@ -48,9 +50,9 @@ export default function Comment() {
           </svg>
         </div>
         <div className="commentDetails">
-          <p>If this is true, that would mean that they can see the ending before it begins, which explains why nobody else managed to pull it off.</p>
+          <p>{comment.body}</p>
           <div className="commentFooter">
-            <p>Month 10, 2020</p>
+            <p>{convertDate(comment.created, true)}</p>
           </div>
 
           {hasChild && childComment() }
