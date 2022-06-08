@@ -15,19 +15,22 @@ function App() {
       <div className="App">
         <NavBar/>
         <main>
-          {/*----page subreddit r/ ------*/}
+          {/*----page subreddit r/:subreddit/comments/ ------*/}
           <Switch>
+            <Route path='/r/:subreddit/comments/:postId'>
+              {/*when click on a post or a subreddit, load a single subreddit */}
+              <DetailSubreddit />
+              {/*when click on a post, load specific post details */}
+              <DetailPost />                              
+            </Route>       
+
+          {/*----page subreddit r/ ------*/}
             <Route path='/r/:subreddit'>
               {/*when click on a post or a subreddit, load a single subreddit */}
               <DetailSubreddit />
-              <Switch>
-                {/*when click on a post, load specific post details */}
-                <Route path={'/r/:subreddit/comments/:postId'}>
-                  <DetailPost />
-                </Route>
-                {/*when click on a subreddit, load specific posts */}
-                <SectionPosts /> 
-              </Switch>                
+                
+              {/*when click on a subreddit, load specific posts */}
+              <SectionPosts />               
             </Route>          
 
             {/*-------- homepage ----------*/}

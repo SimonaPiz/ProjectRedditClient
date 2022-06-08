@@ -9,31 +9,40 @@ import {  fetchPostById } from './detailPostSlice';
 
 export default function DetailPost() {
   const postStatic = {
-    title: 'Post Title - I saw something amazing on this trip', 
+    title: 'Loading...', 
     media: null, 
     created: 1654072819, 
     author: 'user', 
     numComments: 657, 
-    url: './ex-mediaPost.jpg'
+    url: ''
   };
 
   const subreddit = useSelector((state) => state.detailSubreddit.subreddit);
   const post = useSelector((state) => state.detailPost.post);
   const comments = useSelector((state) => state.detailPost.comments);
+  let isComplete = useSelector((state) => state.detailPost.isComplete);
   const dispatch = useDispatch();
   let {url} = useRouteMatch();
-  //console.log(postId);
+  //console.log(isComplete);
 
   useEffect(() => { 
     dispatch(fetchPostById(url));
-  }, [dispatch]);
+  }, [dispatch, url]);
 
-  return ( !post ? 
-    <p>post loading...</p>
-    :
+  return ( 
     <section className='postDetail'>
       <h2>Post details</h2>
       <div id='sectionPostDetails'>
+      {!isComplete ? 
+        <Post 
+          className='postDiv'
+          subreddit={subreddit}
+          post={postStatic}
+          key=''
+          id=''
+          linkSub={false}
+        />
+        :
         <Post 
           className='postDiv'
           subreddit={subreddit}
@@ -41,7 +50,8 @@ export default function DetailPost() {
           key={post.id}
           id={post.id}
           linkSub={false}
-        />        
+        />
+      }        
         <Comments />
       </div>
     </section>

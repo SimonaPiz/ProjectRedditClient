@@ -15,7 +15,8 @@ export const detailPostSlice = createSlice({
   initialState: {
     post: {},
     comments: [],
-    isLoading: false
+    isLoading: false,
+    isComplete: false
   },
   reducers: {
   },
@@ -23,6 +24,7 @@ export const detailPostSlice = createSlice({
     builder
       .addCase(fetchPostById.pending, (state) => {
         state.isLoading = true;
+        state.isComplete = false;
       })
       .addCase(fetchPostById.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -60,11 +62,13 @@ export const detailPostSlice = createSlice({
             permalink: data.permalink        
           };
         });
+        state.isComplete = true;
       })
       .addCase(fetchPostById.rejected, (state) => {
         state.isLoading= false;
         state.post = {};
         state.comments = [];
+        state.isComplete = false;
       })
 
   },

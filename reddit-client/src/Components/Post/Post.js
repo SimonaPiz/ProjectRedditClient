@@ -6,7 +6,7 @@ import { convertDate, convertToK } from '../../util/extra-functions';
 
 export default function Post({post, subreddit, linkSub}) {
   if(post === undefined) {
-    return;
+    return (<p>Loading...</p>);
   }
 
   //-------------per verificare il tipo di media del post
@@ -58,8 +58,10 @@ export default function Post({post, subreddit, linkSub}) {
         }
         <p>{convertDate(created)}</p>
       </div>
-      <a href={'/r/'+ subreddit.name + '/comments/' + post.id}><div className='postContent'>
-        <h3>{title}</h3>
+      <div className='postContent'>
+        <a href={'/r/'+ subreddit.name + '/comments/' + post.id}>
+          <h3>{title}</h3>
+        </a>
         <div className='postMedia'>
           {media === null ? 
             (type === 'img' ?
@@ -67,16 +69,16 @@ export default function Post({post, subreddit, linkSub}) {
               :
               <a href={url}>see article -{'>'}</a>
             )            
-            : 
-              <video controls>
-                <source src={media['reddit_video']['fallback_url']} type='video/mp4'/>
-                <source src={media['reddit_video']['fallback_url']} type='video/webm'/>
-                <p>Video is not supported</p>
-              </video> 
-            }
-          </div>
+          : 
+            <video controls>
+              <source src={media['reddit_video']['fallback_url']} type='video/mp4'/>
+              <source src={media['reddit_video']['fallback_url']} type='video/webm'/>
+              <p>Video is not supported</p>
+            </video> 
+          }
         </div>
-      </a>
+      </div>
+      
       <div className='postDetails'>
         <div className='comments'>
           <div className='iconComment'>
