@@ -1,17 +1,23 @@
 import './Comment.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { convertDate } from '../../util/extra-functions';
 
 export default function Comment({comment}) {
   //for load child comments
   let {replies} = comment;
+  const [childrenCom, setChildrenCom] = useState(null);
+  const [ showChildren, setShowChildren ] = useState(false);
   
   //function to load Comment children
-  const loadChildren = (children) => {
-    children.data.children.map(child => {
-      return <Comment key={child.id} comment={child.data}/>; 
-    })
+  const handleClick = (e) => {
+    if(!showChildren) {
+      setShowChildren(true);
+      setChildrenCom(replies.data.children);
+    } else {
+      setShowChildren(false);
+      setChildrenCom(null);
+    }
   };
   
   return(
@@ -34,7 +40,15 @@ export default function Comment({comment}) {
             <p>{convertDate(comment.created, true)}</p>
           </div>
 
-          {replies && <button className='showAnswers'>{replies.data.children.length} answers</button>}
+          {replies && <button 
+            className='showAnswers'
+            type='button'
+            onClick={(e) => handleClick(e)}
+          >
+            {showChildren ? 'reduce answers' : replies.data.children.length + ' answers'}
+          </button>
+          }
+          {childrenCom && childrenCom.map(child => <Comment key={child.id} comment={child.data}/>)}
         </div>
       </div>
     </div>
