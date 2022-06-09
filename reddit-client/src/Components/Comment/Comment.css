@@ -1,3 +1,7 @@
+.commentComp {
+  width: 100%;
+}
+
 div.userDiv {
   width: 100%;
   padding: 9px 0;
@@ -25,21 +29,20 @@ div.userIcon {
 
 .commentContent {
   display: flex;
-  justify-content: flex-start;
   width: 100%;
+  flex-flow: row nowrap;
 }
 
 .commentDetails {
   display: flex;
   flex-flow: column wrap;
-  flex-grow: 1;
-  max-width: 97%;
+  width: 100%;
 }
 
-.commentDetails p {
+p.commentBody {
+  display: flex;
   word-wrap: break-word;
   padding: 5px;
-  max-width: 100%;
   max-height: 200px;
   overflow-y: auto;
 }
@@ -53,4 +56,13 @@ div.userIcon {
 
 div.verticalLine svg {
   height: 100%;
+}
+
+button.showAnswers {
+  display: flex;
+  background-color:transparent;
+  color: #c784ff;
+  text-decoration: underline;
+  margin-left: 9px;
+  cursor: pointer;
 }

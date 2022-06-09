@@ -13,6 +13,7 @@ export default function Comments ({comments}) {
         comments.map(comment => {
           return (
             <Comment 
+              key={comment.id}
               id={comment.id}
               comment={comment}
             />
