@@ -11,12 +11,14 @@ export default function Comments ({comments}) {
       </svg>
       {comments.length > 0 ?
         comments.map(comment => {
-          return (
+          return (comment ?
             <Comment 
               key={comment.id}
               id={comment.id}
               comment={comment}
             />
+            :
+            <p style={{padding: '20px 0 0 10px', fontSize: '14px'}}>and more...</p>
           )
         }) 
       :

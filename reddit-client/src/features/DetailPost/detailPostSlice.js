@@ -47,8 +47,11 @@ export const detailPostSlice = createSlice({
           url: postComplete.url,
           media: postComplete.media
         };
-
+        
         state.comments = action.payload[1].data.children.map(comment => {
+          if(comment.kind == "more" ) {
+            return ;
+          }
           let {data} = comment;      
           return {
             subreddit: data.subreddit,
