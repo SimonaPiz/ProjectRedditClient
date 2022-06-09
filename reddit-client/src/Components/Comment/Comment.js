@@ -9,8 +9,9 @@ export default function Comment({comment}) {
   const [childrenCom, setChildrenCom] = useState(null);
   const [ showChildren, setShowChildren ] = useState(false);
   
-  //function to load Comment children
+  //function to load Comment children when click on button "answers"
   const handleClick = (e) => {
+    console.log(replies.kind);
     if(!showChildren) {
       setShowChildren(true);
       setChildrenCom(replies.data.children);
@@ -31,7 +32,7 @@ export default function Comment({comment}) {
       <div className="commentContent">
         <div className="verticalLine">
           <svg width="20px" height="50">
-            <line x1="10" y1="0" x2="10" y2="1000"/>
+            <line x1="10" y1="0" x2="10" y2={"10000"}/>
           </svg>
         </div>
         <div className="commentDetails">
@@ -45,10 +46,19 @@ export default function Comment({comment}) {
             type='button'
             onClick={(e) => handleClick(e)}
           >
-            {showChildren ? 'reduce answers' : replies.data.children.length + ' answers'}
+            {showChildren ? 'reduce answers' : (replies.data.children.length + ' answers')}
           </button>
           }
-          {childrenCom && childrenCom.map(child => <Comment key={child.id} comment={child.data}/>)}
+          {childrenCom && childrenCom.map(child => {
+            return (child.kind !== "more" ?
+              <Comment id={child.data.id} key={child.data.id} comment={child.data}/>
+            :
+              <button 
+                type='button' 
+                className='moreComments'
+              >and more...</button>
+            )
+          })}
         </div>
       </div>
     </div>

@@ -71,6 +71,10 @@ button.showAnswers:hover {
   color: blueviolet;
 }
 
-button.showAnswers:visited {
-  visibility:collapse;
+button.moreComments {
+  display: flex;
+  background-color:transparent;
+  color: #878A8C;
+  margin-left: 9px;
+  cursor: not-allowed;
 }
