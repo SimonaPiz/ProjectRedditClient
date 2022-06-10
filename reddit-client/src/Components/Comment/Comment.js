@@ -11,7 +11,6 @@ export default function Comment({comment}) {
   
   //function to load Comment children when click on button "answers"
   const handleClick = (e) => {
-    console.log(replies.kind);
     if(!showChildren) {
       setShowChildren(true);
       setChildrenCom(replies.data.children);

@@ -13,6 +13,10 @@ export default function SearchBar() {
     dispatch(setSearchBar(userInput));
   };
 
+  const handleClick = () => {
+
+  };
+
   return (
     <div id='searchBar'>            
       <div id='searchContent'>
@@ -28,8 +32,12 @@ export default function SearchBar() {
           value={searchTerm}
           onChange={onSearchTermChangeHandler}
         />
-        <button type="button" className='searchButton'>Search</button>
-       
+        <button 
+          type="button" 
+          className='searchButton'
+        >
+          <a href='/search/'>Search</a>
+        </button>       
       </div>      
     </div>
   );

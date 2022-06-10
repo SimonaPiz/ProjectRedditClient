@@ -47,15 +47,17 @@
   border-radius: 20px;
   background-color: #8c00ff;
   text-align: center;
-  font-size: .833rem;
   transition: background-color .25s;
-  border: 0px;
-  color: #fff;
-  font-weight: 700;
+  border: 0px;  
 
   flex-grow: 0;
   flex-basis: 80px;
+}
 
+.searchButton a {
+  color: #fff;
+  font-size: .833rem;
+  font-weight: 700;
 }
 
 .searchButton:hover {
