@@ -49,8 +49,8 @@ export const detailPostSlice = createSlice({
         };
         
         state.comments = action.payload[1].data.children.map(comment => {
-          if(comment.kind == "more" ) {
-            return ;
+          if(comment.kind === "more" ) {
+            return '';
           }
           let {data} = comment;      
           return {
