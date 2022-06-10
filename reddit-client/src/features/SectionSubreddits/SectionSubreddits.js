@@ -24,11 +24,13 @@ export default function SectionSubreddits() {
         {subreddits.length > 0 ? subreddits.map((subreddit) => {
           return (
           <li>
+            <a href={'r/'+ subreddit.name}>
             <Subreddit 
               subreddit={subreddit} 
               key={subreddit.id}
               className="subreddit" 
             />
+            </a>
           </li>
           )
         }) : <li>Loading...</li>}

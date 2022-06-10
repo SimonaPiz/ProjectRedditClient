@@ -1,7 +1,5 @@
 .posts {
   margin: 25px;
-  
-
   flex-grow: 2;
   flex-basis: 65%;
 }
@@ -12,8 +10,3 @@
   font-weight: 400;
 }
 
-.subreddits line {
-  stroke: gray;
-  stroke-linecap: round;
-  stroke-width: 0.5px;
-}

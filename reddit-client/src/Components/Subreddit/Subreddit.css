@@ -18,8 +18,10 @@
   font-size: 19px;
   justify-content: center;
   align-content:center ;
+  align-items: center;
 }
 
 .iconSubreddit img {
   border-radius: 50px;
+  max-width: 100%;
 }

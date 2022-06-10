@@ -1,0 +1,80 @@
+.commentComp {
+  width: 100%;
+}
+
+div.userDiv {
+  width: 100%;
+  padding: 9px 0;
+  color: #878A8C;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+div.userIcon {
+  margin-right: 9px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: #c784ff;
+  display: flex;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  justify-content: center;
+  align-content:center ;
+  align-items: center;
+}
+
+.commentContent {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+}
+
+.commentDetails {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+p.commentBody {
+  display: flex;
+  word-wrap: break-word;
+  padding: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.commentFooter {
+  display: flex;
+  justify-content: flex-end;
+  color: #878A8C;
+  font-size: 14px;
+}
+
+div.verticalLine svg {
+  height: 100%;
+}
+
+button.showAnswers {
+  display: flex;
+  background-color:transparent;
+  color: #c784ff;
+  text-decoration: underline;
+  margin-left: 9px;
+  cursor: pointer;
+}
+
+button.showAnswers:hover {
+  color: blueviolet;
+}
+
+button.moreComments {
+  display: flex;
+  background-color:transparent;
+  color: #878A8C;
+  margin-left: 9px;
+  cursor: not-allowed;
+}

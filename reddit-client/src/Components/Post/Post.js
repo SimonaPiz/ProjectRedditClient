@@ -1,9 +1,12 @@
+import React from 'react';
+
 import {Subreddit} from '../Subreddit/Subreddit';
 import './Post.css';
+import { convertDate, convertToK } from '../../util/extra-functions';
 
-export default function Post({post, subreddit}) {
+export default function Post({post, subreddit, linkSub}) {
   if(post === undefined) {
-    return;
+    return (<p>Loading...</p>);
   }
 
   //-------------per verificare il tipo di media del post
@@ -45,12 +48,20 @@ export default function Post({post, subreddit}) {
   
   return(
     <div className='post'>
-      <div className='postDetail'>
-        <Subreddit subreddit={subreddit}/>
-        <p>{created}</p>
+      <div className='postDetails'>
+        {!linkSub ? 
+          <Subreddit subreddit={subreddit}/>
+        :
+          <a href={'r/'+ subreddit.name}>
+            <Subreddit subreddit={subreddit}/>
+          </a>
+        }
+        <p>{convertDate(created)}</p>
       </div>
       <div className='postContent'>
-        <h3>{title}</h3>
+        <a href={'/r/'+ subreddit.name + '/comments/' + post.id}>
+          <h3>{title}</h3>
+        </a>
         <div className='postMedia'>
           {media === null ? 
             (type === 'img' ?
@@ -67,12 +78,13 @@ export default function Post({post, subreddit}) {
           }
         </div>
       </div>
-      <div className='postDetail'>
+      
+      <div className='postDetails'>
         <div className='comments'>
           <div className='iconComment'>
             <img src='./iconComment.svg' alt="" />
           </div>
-          <p>{numComments} comments</p>
+          <p>{convertToK(numComments)} comments</p>
         </div>
         <p>u/{author}</p>
       </div>
