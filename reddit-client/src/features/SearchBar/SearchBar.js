@@ -2,19 +2,15 @@ import './SearchBar.css';
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
-import { setSearchBar, clearSearchBar, selectSearchBar } from './searchBarSlice';
+import { setSearchBar } from './searchBarSlice';
 
 export default function SearchBar() {
-  const searchTerm = useSelector(selectSearchBar);
+  const searchTerm = useSelector((state) => state.searchBar.searchTerm);
   const dispatch = useDispatch();
 
   const onSearchTermChangeHandler = (e) => {
     const userInput = e.target.value;
     dispatch(setSearchBar(userInput));
-  };
-
-  const handleClick = () => {
-
   };
 
   return (
@@ -36,7 +32,7 @@ export default function SearchBar() {
           type="button" 
           className='searchButton'
         >
-          <a href='/search/'>Search</a>
+          <a href={`/search/?q=${searchTerm}`}>Search</a>
         </button>       
       </div>      
     </div>
