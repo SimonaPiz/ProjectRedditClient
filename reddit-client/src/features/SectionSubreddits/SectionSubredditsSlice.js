@@ -10,6 +10,15 @@ export const fetchSubreddits = createAsyncThunk(
   }
 );
 
+//Creo un'azione asincrona per recuperare i dati di ricerca da Reddit api
+export const fetchSubSearchResults = createAsyncThunk(
+  'sectionSubreddits/fetchSubSearchResults',
+  async (searchTerm) => {
+    const response = await Reddit.getSubSearchResults(searchTerm);
+    return response;
+  }
+);
+
 export const sectionSubredditsSlice = createSlice({
   name: 'sectioSubreddits',
   initialState: {
@@ -27,6 +36,18 @@ export const sectionSubredditsSlice = createSlice({
         state.subreddits = action.payload;
       })
       .addCase(fetchSubreddits.rejected, (state) => {
+        state.isLoading= false;
+        state.subreddits = [];
+      })
+
+      .addCase(fetchSubSearchResults.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchSubSearchResults.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.subreddits = action.payload;
+      })
+      .addCase(fetchSubSearchResults.rejected, (state) => {
         state.isLoading= false;
         state.subreddits = [];
       })

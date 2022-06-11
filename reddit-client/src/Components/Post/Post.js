@@ -52,7 +52,7 @@ export default function Post({post, subreddit, linkSub}) {
         {!linkSub ? 
           <Subreddit subreddit={subreddit}/>
         :
-          <a href={'r/'+ subreddit.name}>
+          <a href={'/r/'+ subreddit.name}>
             <Subreddit subreddit={subreddit}/>
           </a>
         }

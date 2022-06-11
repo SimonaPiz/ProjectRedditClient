@@ -77,6 +77,51 @@ const Reddit = {
     return json;
   },
 
+  getSearchResults: async(searchTerm) => {
+    const response = await fetch(`${urlRoot}/search.json${searchTerm}`);
+    const json = await response.json();
+    return json.data.children.map((post) => {
+      return {
+        subreddit: post.data.subreddit,
+        subredditObj: {},
+        title: post.data.title,
+        name: post.data.name,
+        vote: post.data['upvote_ratio'],
+        ups: post.data.ups,
+        mediaSec: post.data['secure_media_embed'],
+        score: post.data.score,
+        created: post.data.created,
+        urlPost: post.data['url_overridden_by_dest'],
+        over18: post.data['over_18'],
+        subredditId: post.data['subreddit_id'],
+        id: post.data.id,
+        author: post.data.author,
+        numComments: post.data['num_comments'],
+        url: post.data.url,
+        media: post.data.media
+      };
+    });
+  },
+
+  getSubSearchResults: async(searchTerm) => {
+    const response = await fetch(`${urlRoot}/subreddits/search.json${searchTerm}`);
+    const json = await response.json();
+    return json.data.children.map(subreddit => {
+      return {
+        name: subreddit.data['display_name'],
+        headerImg: subreddit.data['header_img'],
+        title: subreddit.data.title,
+        color: subreddit.data['primary_color'],
+        icon: subreddit.data['icon_img'],
+        subscribers: subreddit.data.subscribers,
+        id: subreddit.data.id,
+        description: subreddit.data['public_description'],
+        created: subreddit.data.created,
+        type: subreddit.data['subreddit_type'],
+        over18: subreddit.data['over18'],
+      };
+    });
+  },
 };
 
 export default Reddit;

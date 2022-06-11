@@ -15,8 +15,8 @@ function App() {
       <div className="App">
         <NavBar/>
         <main>
-          {/*----page subreddit r/:subreddit/comments/ ------*/}
           <Switch>
+          {/*----page subreddit r/:subreddit/comments/ ------*/}
             <Route path='/r/:subreddit/comments/:postId'>
               {/*when click on a post or a subreddit, load a single subreddit */}
               <DetailSubreddit />
@@ -31,9 +31,17 @@ function App() {
                 
               {/*when click on a subreddit, load specific posts */}
               <SectionPosts />               
-            </Route>          
+            </Route> 
 
-            {/*-------- homepage ----------*/}
+          {/*-------- search results ----------*/}
+            <Route path='/search/'>
+              {/*when click search button, load a list of subreddits with search term */}
+              <SectionSubreddits/>
+              {/*when click search button, load posts with search term */}
+              <SectionPosts />
+            </Route>         
+
+          {/*-------- homepage ----------*/}
             <Route exact path='/'>
               {/*when app starts, loading a default list of subreddits */}
               <SectionSubreddits/>
