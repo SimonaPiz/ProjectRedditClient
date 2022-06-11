@@ -18,7 +18,7 @@ export const fetchSubredditByName = createAsyncThunk(
   }
 );
 
-//Creo un'azione asincrona per recuperare i dati da Reddit api
+//Creo un'azione asincrona per recuperare i dati di ricerca da Reddit api
 export const fetchSearchResults = createAsyncThunk(
   'sectionPosts/fetchSearchResults',
   async (searchTerm) => {
