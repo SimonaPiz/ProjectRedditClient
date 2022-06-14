@@ -1,0 +1,15 @@
+.commentsSection {
+  margin-top: 15px;
+  background-color: white;  
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+line {
+  stroke: gray;
+  stroke-linecap: round;
+  stroke-width: 0.5px;
+}

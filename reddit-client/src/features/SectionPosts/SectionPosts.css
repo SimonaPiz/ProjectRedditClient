@@ -1,0 +1,18 @@
+.posts {
+  margin: 25px;
+  flex-grow: 1;
+  width: 65%;
+}
+
+.posts h2 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  .posts {
+    width: 100%;
+    margin: 25px 0 0 0;
+  }
+}
