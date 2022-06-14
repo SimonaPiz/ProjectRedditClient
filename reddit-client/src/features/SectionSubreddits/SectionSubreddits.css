@@ -29,3 +29,10 @@
   font-size: 31px;
   line-height: 32px;
 }
+
+@media only screen and (max-width: 768px) {
+  .subreddits {
+    width: 100%;
+    margin: 0;
+  }
+}

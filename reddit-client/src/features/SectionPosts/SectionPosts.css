@@ -1,7 +1,6 @@
 .posts {
   margin: 25px;
   flex-grow: 1;
-  flex-basis: 65%;
   width: 65%;
 }
 
@@ -11,3 +10,9 @@
   font-weight: 400;
 }
 
+@media only screen and (max-width: 768px) {
+  .posts {
+    width: 100%;
+    margin: 25px 0 0 0;
+  }
+}

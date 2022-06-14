@@ -52,3 +52,10 @@
   float: right;
   margin: 0;
 }
+
+@media only screen and (max-width: 768px) {
+  .subredditDetail {
+    width: 100%;
+    margin: 0;
+  }
+}
