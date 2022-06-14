@@ -3,8 +3,13 @@ div.App {
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+ 
 }

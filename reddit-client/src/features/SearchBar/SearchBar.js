@@ -2,7 +2,7 @@ import './SearchBar.css';
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
-import { setSearchBar, clearSearchBar, selectSearchBar } from './searchBarSlice';
+import { setSearchBar, selectSearchBar } from './searchBarSlice';
 
 export default function SearchBar() {
   const searchTerm = useSelector(selectSearchBar);
