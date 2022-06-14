@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import './SectionPosts.css';
 import Post from '../../Components/Post/Post';
-import {  fetchPosts, fetchSubredditByName } from './sectionPostsSlice';
+import {  fetchPosts, fetchSubredditByName, fetchSearchResults } from './sectionPostsSlice';
 
 export default function SectionPosts() {
   const posts = useSelector((state) => state.sectionPosts.posts);
@@ -13,9 +13,10 @@ export default function SectionPosts() {
   const subObj = useSelector((state) => state.detailSubreddit.subreddit);
   const dispatch = useDispatch();
   
-  let { subreddit } = useParams();    //import param from url (if it is /:subreddit)
+  let { subreddit } = useParams();    //import param from url (if it is /r/:subreddit)
+  let { search } = useLocation();       //import param from url (if it is /search/?q=:searchTerm)
   let linkActive = true;    //per attivare/disattivare il link alla subreddit
-  //console.log(subreddit);
+
   if(subreddit) {
     linkActive = false;
   }
@@ -23,10 +24,12 @@ export default function SectionPosts() {
   useEffect(() => {
     if(subreddit) {
       dispatch(fetchPosts('/r/' + subreddit));
+    } else if (search) {      
+      dispatch(fetchSearchResults(search));
     } else {
       dispatch(fetchPosts('/r/popular'));
     }    
-  }, [dispatch, subreddit]);
+  }, [dispatch, subreddit, search]);
 
   useEffect(() => {
     if(!subreddit){
@@ -59,7 +62,7 @@ export default function SectionPosts() {
 
   return (
     <section className='posts'>
-      <h2>{!subreddit ? 'Popular Posts' : 'Posts'}</h2>
+      <h2>{!subreddit ? (search ? 'Posts include: ' + search.replace('?q=', '') : 'Popular Posts') : 'Posts'}</h2>
       {posts.length > 0 ? posts.map((post) => {
         return(
         <Post

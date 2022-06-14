@@ -53,7 +53,12 @@
   font-weight: 500;
 
   width: 100px;
+}
 
+.searchButton a {
+  color: #fff;
+  font-size: .833rem;
+  font-weight: 700;
 }
 
 .searchButton:hover {
