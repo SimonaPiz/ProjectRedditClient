@@ -18,3 +18,10 @@ main {
     padding: 25px 5% 0 5%;
   }
 }
+
+@media only screen and (min-width: 1600px) {
+  main {
+    width: 1600px;
+    margin:auto;
+  }
+}

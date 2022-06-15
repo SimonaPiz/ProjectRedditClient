@@ -12,6 +12,7 @@
   font-size: 12px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .postContent {
@@ -56,4 +57,10 @@ h3 {
 
 .iconComment img {
   width: 13px;
+}
+
+@media only screen and (max-width: 768px) {
+  .postContent {
+    padding: 20px 1%;
+  }
 }
