@@ -15,6 +15,6 @@ main {
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 25px 25px 0 25px;
+    padding: 25px 5% 0 5%;
   }
 }

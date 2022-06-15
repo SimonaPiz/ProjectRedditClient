@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ import { fetchSubreddits, fetchSubSearchResults } from './SectionSubredditsSlice
 export default function SectionSubreddits() {
   const subreddits = useSelector((state) => state.sectionSubreddits.subreddits);
   const dispatch = useDispatch();
+  const [ active, setActive] = useState(false); //for responsive mobile
 
   let { search } = useLocation();       //import param from url (if it is /search/?q=:searchTerm)
 
@@ -21,13 +22,23 @@ export default function SectionSubreddits() {
   }, [dispatch, search]);
   //console.log(subreddits);
 
+  const handleClick = (e) => {
+    if(!active){
+      setActive(true);
+    } else {
+      setActive(false);
+    };    
+  };
+
   return (
     <section className='subreddits'>
-      <h2>{search ? 'Subreddits include: ' + search.replace('?q=', '') : 'Subreddits'}</h2>
-      <svg width="100%" height="10px">
+      <button className={active && 'active'} onClick={(e) => handleClick(e)}>
+        <h2>{search ? 'Subreddits include: ' + search.replace('?q=', '') : 'Subreddits'}</h2>
+      </button>
+      <svg width="100%" height="10px" className={active && 'active'}>
         <line x1="0" y1="5" x2="900" y2="5"/>
       </svg>
-      <ul>
+      <ul className={active && 'active'}>
         {subreddits.length > 0 ? subreddits.map((subreddit) => {
           return (
           <li>
