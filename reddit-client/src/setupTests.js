@@ -3,3 +3,8 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+import { server } from './mocks/server';
+
+beforeAll(() => server.listen()); //simulano l'api prima di tutti i test
+afterEach(() => server.resetHandlers());// ripristina gli handlers aggiunti successivamente
+afterAll(() => server.close());// pulisce al termine dei test
