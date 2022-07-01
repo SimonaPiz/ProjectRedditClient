@@ -19,10 +19,10 @@ export function Subreddit ({subreddit}) {
       <div className='iconSubreddit' style={{backgroundColor: color}}> 
         {icon !== "" ?       
           <img src={icon} alt=""/>
-        : <p>r/</p>
+        : <p data-testid='emptyIcon'>r/</p>
         }
       </div>
-      <p>r/{name || 'non trovato'}</p>
+      <p>r/{name}</p>
     </div>
   );
 }

@@ -18,7 +18,7 @@ describe('Subreddit component', () => {
       id: "2qgzy"
     }
 
-  test('Render Subreddit with prop', () => {
+  test('Render with prop', () => {
     render(<Subreddit subreddit={initialState}/>);
     //screen.debug();
     const imgIcon = screen.getByRole('img');
@@ -27,7 +27,7 @@ describe('Subreddit component', () => {
     expect(imgIcon).toBeVisible();
   });
 
-  test('Render Subreddit without prop', () => {
+  test('Render without prop', () => {
     render(<Subreddit subreddit=''/>);
     //screen.debug();
     const imgIcon = screen.queryByRole('img');
@@ -35,6 +35,17 @@ describe('Subreddit component', () => {
     
     const subNameP = screen.getByText('r/example title');
     expect(subNameP).toBeInTheDocument();
+  });
+
+  test('Render with prop and empty icon', () => {
+    initialState.icon = '';
+    render(<Subreddit subreddit={initialState}/>);
+    //screen.debug();
+    const imgIcon = screen.queryByRole('img');
+    expect(imgIcon).toBeNull();
+
+    const rIcon = screen.getByTestId('emptyIcon');
+    expect(rIcon).toBeInTheDocument();
   });
 
 });
