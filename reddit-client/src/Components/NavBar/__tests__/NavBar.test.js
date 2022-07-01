@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 import NavBar from '../NavBar';
+import searchBarReducer, { setSearchBar } from "../../../features/SearchBar/searchBarSlice";
 
 describe('NavBar component', () => {
   test('Logo is an active link to homepage', () => {
@@ -23,9 +24,11 @@ describe('NavBar component', () => {
     const searchBox = screen.getByPlaceholderText('Cerca su Reddit');
     expect(searchBox).toBeInTheDocument();
     expect(searchBox).toHaveDisplayValue('');
+    expect(searchBarReducer(undefined, {})).toEqual({searchTerm: ''});
 
     userEvent.type(searchBox, 'cow');
     expect(searchBox).toHaveValue('cow');
+    expect(searchBarReducer({searchTerm: ''}, setSearchBar('cow'))).toEqual({searchTerm: 'cow'});
   });
 
   test('button search', () => {
