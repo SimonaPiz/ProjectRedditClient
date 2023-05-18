@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ProjectRedditClient/static/css/main.ff51f158.css",
+    "main.js": "/ProjectRedditClient/static/js/main.fb7a1297.js",
+    "static/media/logo01.svg": "/ProjectRedditClient/static/media/logo01.8c2cc5595962d5a0ffc6.svg",
+    "index.html": "/ProjectRedditClient/index.html",
+    "main.ff51f158.css.map": "/ProjectRedditClient/static/css/main.ff51f158.css.map",
+    "main.fb7a1297.js.map": "/ProjectRedditClient/static/js/main.fb7a1297.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff51f158.css",
+    "static/js/main.fb7a1297.js"
+  ]
+}
