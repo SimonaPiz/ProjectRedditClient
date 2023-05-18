@@ -32,13 +32,13 @@ export default function SectionSubreddits() {
 
   return (
     <section className='subreddits'>
-      <button className={active && 'active'} onClick={(e) => handleClick(e)}>
+      <button className={active ? 'active' : undefined} onClick={(e) => handleClick(e)}>
         <h2>{search ? 'Subreddits include: ' + search.replace('?q=', '') : 'Subreddits'}</h2>
       </button>
-      <svg width="100%" height="10px" className={active && 'active'}>
+      <svg width="100%" height="10px" className={active ? 'active' : undefined}>
         <line x1="0" y1="5" x2="900" y2="5"/>
       </svg>
-      <ul className={active && 'active'}>
+      <ul className={active ? 'active' : undefined}>
         {subreddits.length > 0 ? subreddits.map((subreddit) => {
           return (
           <li>
