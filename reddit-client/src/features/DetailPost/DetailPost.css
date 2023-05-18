@@ -1,0 +1,28 @@
+.postDetail {
+  margin: 25px;
+  flex-grow: 2;
+  width: 65%;
+}
+
+.postDetail h2 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+#sectionPostDetails {  
+  background-color: white;  
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 1px #b1b1b1;
+}
+
+div#sectionPostDetail .postDiv {
+  box-shadow: 0px 0px 0px 0px #b1b1b1;
+}
+
+@media only screen and (max-width: 768px) {
+  .postDetail {
+    width: 100%;
+    margin: 25px 0 0 0;
+  }
+}

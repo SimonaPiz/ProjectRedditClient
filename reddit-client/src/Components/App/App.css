@@ -1,0 +1,27 @@
+div.App {
+  width: 100%;  
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 25px 5% 0 5%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  main {
+    width: 1600px;
+    margin:auto;
+  }
+}
