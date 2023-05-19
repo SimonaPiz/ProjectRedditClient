@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# App Reddit Client
+> The application allow users to view and search posts and comments provided by the Reddit API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live demo [https://reddit-client_simonapiz.surge.sh/](https://reddit-client_simonapiz.surge.sh/). <!-- If you have the project hosted somewhere, include the link here. -->
 
-## Available Scripts
+## Screenshots
+#### Preview Homepage
+![preview home](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/864233ec-ad75-4679-8658-895c0ec1b7b2)
 
-In the project directory, you can run:
+#### Preview Subreddit' page
+![preview subreddit](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/d8edbd20-8146-4d34-ac30-96cc8479b63e)
 
-### `npm start`
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Wireframes](#wireframes)
+* [Setup](#setup)
+* [Acknowledgements](#acknowledgements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## General Information
+Reddit is a website where people share links to articles, media and other things on the web. I use [Reddit's API](https://github.com/reddit-archive/reddit/wiki/JSON) to provide data to integrate into the application. The application will allow users to view and search posts and comments provided by the API.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Technologies Used
+- react: 18
+- react-redux: 8
+- redux: 4
+- node: 18
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Users can use the application on any device (desktop to mobile)
+- [x] Users can use the application on any modern browser
+- [x] Users can access your application at a URL
+- [x] Users see an initial view of the data when first visiting the app
+- [x] Users can search the data using terms
+- [x] Users can filter the data based on categories that are predefined
+- [x] Users are shown a detailed view (modal or new page/route) when they select an item
+- [x] Users are delighted with a cohesive design system
+- [ ] Users are delighted with animations and transitions
+- [ ] Users are able to leave an error state
+- [ ] Get 90+ scores on Lighthouse
+  - We understand you cannot control how media assets like videos and images are sent to the client. It is okay to have a score below 90 for Performance if they are related to the media from Reddit.
+- [ ] OPTIONAL: Get a custom domain name and use it for your application
+- [ ] OPTIONAL: Set up a CI/CD workflow to automatically deploy your application when the master branch in the repository changes
+- [ ] OPTIONAL: Make your application a progressive web app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wireframes
+> Draft
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![pencil draft](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/341c2d20-7da0-4f27-bd0b-466e20296ec5)
 
-### `npm run eject`
+> Desktop Homepage - low fidelity - with [figma](https://www.figma.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Desktop Homepage - Wireframe - low fidelity](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/2e4405ef-8f7e-48e2-ba67-7909372b36c9)
+> Desktop Post detail page - low fidelity - with [figma](https://www.figma.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Desktop Post detail page - Wireframe - low fidelity](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/2a34b220-a36e-4824-938d-e01ec8112935)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> React Component Hierarchy - Homepage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Homepage-gerarchia-componenti-react](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/25a99513-bf0c-447e-93d6-bf7a6a4c33b6)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Setup
+To run this project, install it locally using npm:
+```
+$ cd ../[directory]
+$ npm install
+$ npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+This project comes from the [Codecademy's Front-End Engineer](https://join.codecademy.com/learn/paths/front-end-engineer-career-path-b/) course.
