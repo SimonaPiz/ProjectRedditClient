@@ -5,10 +5,10 @@ Live demo [https://reddit-client_simonapiz.surge.sh/](https://reddit-client_simo
 
 ## Screenshots
 #### Preview Homepage
-![preview home](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/864233ec-ad75-4679-8658-895c0ec1b7b2)
+<img src="https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/864233ec-ad75-4679-8658-895c0ec1b7b2" width="800px" alt="home preview" title="home preview"/>
 
 #### Preview Subreddit' page
-![preview subreddit](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/d8edbd20-8146-4d34-ac30-96cc8479b63e)
+<img src="https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/d8edbd20-8146-4d34-ac30-96cc8479b63e" width="800px" alt="subreddit preview" title="subreddit preview"/>
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -55,15 +55,15 @@ Reddit is a website where people share links to articles, media and other things
 
 > Desktop Homepage - low fidelity - with [figma](https://www.figma.com/)
 
-![Desktop Homepage - Wireframe - low fidelity](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/2e4405ef-8f7e-48e2-ba67-7909372b36c9)
+<img src="https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/2e4405ef-8f7e-48e2-ba67-7909372b36c9" width="600px" alt="Desktop Homepage - Wireframe - low fidelity" title="Desktop Homepage - Wireframe - low fidelity"/>
+
 > Desktop Post detail page - low fidelity - with [figma](https://www.figma.com/)
 
-![Desktop Post detail page - Wireframe - low fidelity](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/2a34b220-a36e-4824-938d-e01ec8112935)
+<img src="https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/2a34b220-a36e-4824-938d-e01ec8112935" width="600px" alt="Desktop Post detail page - Wireframe - low fidelity" title="Desktop Post detail page - Wireframe - low fidelity"/>
 
 > React Component Hierarchy - Homepage
 
-![Homepage-gerarchia-componenti-react](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/25a99513-bf0c-447e-93d6-bf7a6a4c33b6)
-
+<img src="https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/25a99513-bf0c-447e-93d6-bf7a6a4c33b6" width="600px" alt="Homepage-gerarchia-componenti-react" title="Homepage-gerarchia-componenti-react"/>
 
 ## Setup
 To run this project, install it locally using npm:
