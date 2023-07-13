@@ -1,6 +1,9 @@
 # App Reddit Client
 > The application allow users to view and search posts and comments provided by the Reddit API.
 
+![MultiDevice](https://github.com/SimonaPiz/ProjectRedditClient/assets/91121660/056e006d-f66b-4915-a5e9-25144c8cceb9)
+
+
 Live demo [https://reddit-client_simonapiz.surge.sh/](https://reddit-client_simonapiz.surge.sh/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Screenshots
